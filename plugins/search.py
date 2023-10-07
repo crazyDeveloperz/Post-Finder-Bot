@@ -35,10 +35,11 @@ async def search(bot, message):
                                           caption="<b><I>I Couldn't find anything related to Your Query😕.\nDid you mean any of these?</I></b>", 
                                           reply_markup=InlineKeyboardMarkup(buttons))
        else:
-     _time = (int(time()) + (2*60))
-      await save_dlt_message(msg, _time)
-  except:
-    pass
+          msg = await message.reply_text(text=head+results, disable_web_page_preview=True)
+       _time = (int(time()) + (15*60))
+       await save_dlt_message(msg, _time)
+    except:
+       passv
        
 @Client.on_callback_query(filters.regex(r"^recheck"))
 async def recheck(bot, update):
