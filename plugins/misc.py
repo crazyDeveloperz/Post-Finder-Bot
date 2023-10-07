@@ -99,6 +99,6 @@ async def misc(bot, update):
        await update.message.edit(text=script.BHOLE, 
                                  disable_web_page_preview=True,
                                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🧑‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛᴏ ᴏᴡɴᴇʀ 🧑‍💻", callback_data="misc_crezy"),
-                                                                  ],[InlineKeyboardButton("🖤 ᴊᴏɪɴ ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ 💠", url=f'https://t.me/snfily'),
+                                                                  ],[InlineKeyboardButton("🖤 ᴊᴏɪɴ ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ 💠", url=f'https://t.me/snfilmy'),
             ],[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="misc_home"),
                                                             InlineKeyboardButton("ɴᴇxᴛ 🔘", url=f'https://moviehub4s.blogspot.com')]]))   
