@@ -7,10 +7,10 @@ async def start(bot, message):
     await add_user(message.from_user.id, message.from_user.first_name)
     await message.reply(text=script.START.format(message.from_user.mention),
                         disable_web_page_preview=True,
-                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('˵ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ˵', url=f'http://t.me/Postfindbot?startgroup=true')
-            ],[InlineKeyboardButton("ʜᴇʟᴘ", callback_data="misc_help2"),
-                                                            InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="misc_about"),
-            ],[InlineKeyboardButton("ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", callback_data="misc_bhole")]]))  
+                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⇆', url=f'http://t.me/Link_Search_Rbot?startgroup=true')
+            ],[InlineKeyboardButton("💠 ʜᴇʟᴘ 💠", callback_data="misc_help2"),
+                                                            InlineKeyboardButton("♻️ ᴀʙᴏᴜᴛ ♻️", callback_data="misc_about"),
+            ],[InlineKeyboardButton("🔺 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🔺", callback_data="misc_bhole")]]))  
 
 
 @Client.on_message(filters.command("help"))
@@ -64,41 +64,41 @@ async def misc(bot, update):
     if data=="home":
        await update.message.edit(text=script.START.format(update.from_user.mention),
                                  disable_web_page_preview=True,
-                                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('˵ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ˵', url=f'http://t.me/Postfindbot?startgroup=true')
-            ],[InlineKeyboardButton("ʜᴇʟᴘ", callback_data="misc_help2"),
-                                                            InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="misc_about"),
-            ],[InlineKeyboardButton("ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ", callback_data="misc_bhole")]])) 
+                                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⇆', url=f'http://t.me/Link_Search_Rbot?startgroup=true')
+            ],[InlineKeyboardButton("💠 ʜᴇʟᴘ 💠", callback_data="misc_help2"),
+                                                            InlineKeyboardButton("♻️ ᴀʙᴏᴜᴛ ♻️", callback_data="misc_about"),
+            ],[InlineKeyboardButton("🔺 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🔺", callback_data="misc_bhole")]])) 
    
     elif data=="help":
         await update.message.edit(text=script.HELP,
                                   disable_web_page_preview=True,
-                                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="misc_home")]]))
+                                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔘 ʙᴀᴄᴋ", callback_data="misc_home")]]))
     
     elif data=="help2":
        await update.message.edit(text=script.HELP2, 
                                  disable_web_page_preview=True,
                                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🧑‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛᴏ ᴏᴡɴᴇʀ 🧑‍💻", callback_data="misc_crezy"),
             ],[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="misc_home"),
-                                                            InlineKeyboardButton("ɴᴇxᴛ", url=f'https://graph.org/support-04-04')]])) 
+                                                            InlineKeyboardButton("ɴᴇxᴛ 🔘", url=f'https://moviehub4s.blogspot.com')]])) 
 
     elif data=="about":
         await update.message.edit(text=script.ABOUT.format((await bot.get_me()).mention), 
                                   disable_web_page_preview=True,
-                                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="misc_home")]]))
+                                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔘 ʙᴀᴄᴋ", callback_data="misc_home")]]))
       
         
     elif data=="crezy":
         await update.message.edit(text=script.CREZY, 
                                  disable_web_page_preview=True,
-                                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💶 ᴘʟᴇᴀsᴇ ᴅᴏɴᴀᴛᴇ 💰", url=f'https://graph.org/support-04-04'),
+                                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💶 ᴘʟᴇᴀsᴇ ᴅᴏɴᴀᴛᴇ 💰", url=f'http://bit.ly/IMDBdonate'),
             ],[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="misc_home"),
-                                                            InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ", url=f'https://telegram.me/crezyDevelopers')]]))
+                                                            InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ", url=f'https://telegram.me/heartlesssn')]]))
 
 
     elif data=="bhole":
        await update.message.edit(text=script.BHOLE, 
                                  disable_web_page_preview=True,
                                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🧑‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛᴏ ᴏᴡɴᴇʀ 🧑‍💻", callback_data="misc_crezy"),
-                                                                  ],[InlineKeyboardButton("🖤 ᴊᴏɪɴ ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ 💠", url=f'https://t.me/movieflix_officall'),
+                                                                  ],[InlineKeyboardButton("🖤 ᴊᴏɪɴ ᴍᴏᴠɪᴇ ᴄʜᴀɴɴᴇʟ 💠", url=f'https://t.me/snfily'),
             ],[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="misc_home"),
-                                                            InlineKeyboardButton("ɴᴇxᴛ", url=f'https://3qallmoviez.blogspot.com')]]))   
+                                                            InlineKeyboardButton("ɴᴇxᴛ 🔘", url=f'https://moviehub4s.blogspot.com')]]))   
