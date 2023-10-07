@@ -101,7 +101,7 @@ async def force_sub(bot, message):
        f_link = (await bot.get_chat(f_sub)).invite_link
        member = await bot.get_chat_member(f_sub, message.from_user.id)
        if member.status==enums.ChatMemberStatus.BANNED:
-          await message.reply(f"Sorry {message.from_user.mention}!\n You are banned in our channel, you will be banned from here within 10 seconds")
+          await message.reply(f"**ꜱᴏʀʀʏ {message.from_user.mention}!\n ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ ɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ, ʏᴏᴜ ᴡɪʟʟ ʙᴇ ʙᴀɴɴᴇᴅ ꜰʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ 10 ꜱᴇᴄᴏɴᴅꜱ**")
           await asyncio.sleep(10)
           await bot.ban_chat_member(message.chat.id, message.from_user.id)
           return False       
@@ -110,10 +110,10 @@ async def force_sub(bot, message):
                                       user_id=message.from_user.id,
                                       permissions=ChatPermissions(can_send_messages=False)
                                       )
-       await message.reply(f"😍 𝗗𝗘𝗔𝗥 𝗨𝗦𝗘𝗥 {message.from_user.mention}!\n\n𝗧𝗢 𝗦𝗘𝗡𝗗 𝗠𝗘𝗦𝗦𝗔𝗚𝗘 𝗜𝗡 𝗧𝗛𝗘 𝗚𝗥𝗢𝗨𝗣, 𝗬𝗢𝗨 𝗛𝗔𝗩𝗘 𝗧𝗢 𝗝𝗢𝗜𝗡 𝗜𝗡 𝗢𝗨𝗥 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗧𝗢 𝗠𝗘𝗦𝗦𝗔𝗚𝗘 𝗛𝗘𝗥𝗘", 
-                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=f'https://t.me/only_botz')],
-                                                          [InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=f_link)],
-                                                          [InlineKeyboardButton("ᴛʀʏ ᴀɢᴀɪɴ", callback_data=f"checksub_{message.from_user.id}")]]))
+       await message.reply(f"**😍 ᴅᴇᴀʀ ᴜꜱᴇʀ {message.from_user.mention}!\n\nᴛᴏ ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ , ʏᴏᴜ ʜᴀᴠᴇ ᴛᴏ ᴊᴏɪɴ ɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴍᴇꜱꜱᴀɢᴇ ʜᴇʀᴇ**", 
+                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔺 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 🔺", url=f'https://t.me/Crazybotz')],
+                                                          [InlineKeyboardButton("🔺 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 🔺", url=f_link)],
+                                                          [InlineKeyboardButton("🔁 ᴛʀʏ ᴀɢᴀɪɴ 🔁", callback_data=f"checksub_{message.from_user.id}")]]))
        await message.delete()
        return False
     except Exception as e:
