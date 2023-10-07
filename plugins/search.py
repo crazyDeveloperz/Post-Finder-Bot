@@ -25,7 +25,7 @@ async def search(bot, message):
                name = (msg.text or msg.caption).split("\n")[0]
                if name in results:
                   continue 
-               results += f"<b><I>♻️ {name}\n🔗 {msg.link}</I></b>\n\n"                                                      
+               results += f"<b><I>♻️ {name}\n🔗 href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙝𝙚𝙧𝙚</a></b>\n\n"                                                      
        if bool(results)==False:
           movies = await search_imdb(query)
           buttons = []
@@ -51,9 +51,9 @@ async def recheck(bot, update):
     except:
        return await update.message.delete(2)       
     if clicked != typed:
-       return await update.answer("That's not for you! 👀", show_alert=True)
+       return await update.answer("𝐓𝐡𝐚𝐭'𝐬 𝐧𝐨𝐭 𝐟𝐨𝐫 𝐲𝐨𝐮! 👀", show_alert=True)
 
-    m=await update.message.edit("Searching..💥")
+    m=await update.message.edit("𝗦𝗲𝗮𝗿𝗰𝗵𝗶𝗻𝗴...")
     id      = update.data.split("_")[-1]
     query   = await search_imdb(id)
     channels = (await get_group(update.message.chat.id))["channels"]
@@ -65,9 +65,9 @@ async def recheck(bot, update):
                name = (msg.text or msg.caption).split("\n")[0]
                if name in results:
                   continue 
-               results += f"<b><I>♻️🍿 {name}</I></b>\n\n🔗 {msg.link}</I></b>\n\n"
+               results += f"<b>♻️🍿 {name}</I></b>\n\n🔗 href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙝𝙚𝙧𝙚</a></b>\n\n"
        if bool(results)==False:          
-          return await update.message.edit("Still no results found! Please Request To Group Admin", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎯 ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴀᴅᴍɪɴ 🎯", callback_data=f"request_{id}")]]))
+          return await update.message.edit("Still no results found! Please Request To Group Admin", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔺 ʀᴇQᴜᴇꜱᴛ ᴛᴏ ᴀᴅᴍɪɴ 🔺", callback_data=f"request_{id}")]]))
        await update.message.edit(text=head+results, disable_web_page_preview=True)
     except Exception as e:
        await update.message.edit(f"❌ Error: `{e}`")
@@ -81,7 +81,7 @@ async def request(bot, update):
     except:
        return await update.message.delete()       
     if clicked != typed:
-       return await update.answer("That's not for you! 👀", show_alert=True)
+       return await update.answer("𝐓𝐡𝐚𝐭'𝐬 𝐧𝐨𝐭 𝐟𝐨𝐫 𝐲𝐨𝐮! 👀", show_alert=True)
 
     admin = (await get_group(update.message.chat.id))["user_id"]
     id    = update.data.split("_")[1]
@@ -89,5 +89,5 @@ async def request(bot, update):
     url   = "https://www.imdb.com/title/tt"+id
     text  = f"#RequestFromYourGroup\n\nName: {name}\nIMDb: {url}"
     await bot.send_message(chat_id=admin, text=text, disable_web_page_preview=True)
-    await update.answer("✅ ʀᴇǫᴜᴇsᴛ sᴇɴᴛ ᴛᴏ ᴀᴅᴍɪɴ", show_alert=True)
+    await update.answer("✅ 𝙍𝙚𝙦𝙪𝙚𝙨𝙩 𝙎𝙚𝙣𝙩 𝙏𝙤 𝘼𝙙𝙢𝙞𝙣...", show_alert=True)
     await update.message.delete(60)
