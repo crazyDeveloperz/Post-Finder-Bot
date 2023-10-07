@@ -25,7 +25,7 @@ async def search(bot, message):
                name = (msg.text or msg.caption).split("\n")[0]
                if name in results:
                   continue 
-               results += f"<b><I>♻️  {name}\n💠  <a href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙃𝙚𝙧𝙚 𝙁𝙤𝙧 𝙍𝙚𝙖𝙪𝙡𝙩</a></b>\n\n"                                                      
+               results += f"<b><I>♻️  {name}\n💠 <a href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙃𝙚𝙧𝙚 𝙁𝙤𝙧 𝙍𝙚𝙖𝙪𝙡𝙩</a></b>\n\n"                                                      
        if bool(results)==False:
           movies = await search_imdb(query)
           buttons = []
