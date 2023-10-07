@@ -17,7 +17,7 @@ async def search(bot, message):
     if message.text.startswith("/"):
        return    
     query   = message.text 
-    head    = "<u>Here is the results 👇\n\nPromoted By </u> <b><I>@only_botz</I></b>\n\n"
+    head    = "<b>𝙃𝙚𝙧𝙚 𝙞𝙨 𝙩𝙝𝙚 𝙧𝙚𝙨𝙪𝙡𝙩𝙨 👇\n\n𝙋𝙧𝙤𝙢𝙤𝙩𝙚𝙙 𝘽𝙮 <a href='https://t.me/Crazybotz'>𝘾𝙧𝙖𝙯𝙮</a></b>\n\n"
     results = ""
     try:
        for channel in channels:
@@ -25,7 +25,7 @@ async def search(bot, message):
                name = (msg.text or msg.caption).split("\n")[0]
                if name in results:
                   continue 
-               results += f"<b><I>♻️ {name}\n🔗 href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙝𝙚𝙧𝙚</a></b>\n\n"                                                      
+               results += f"<b><I>♻️ {name}\n🔗<a href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙝𝙚𝙧𝙚</a></b>\n\n"                                                      
        if bool(results)==False:
           movies = await search_imdb(query)
           buttons = []
@@ -57,7 +57,7 @@ async def recheck(bot, update):
     id      = update.data.split("_")[-1]
     query   = await search_imdb(id)
     channels = (await get_group(update.message.chat.id))["channels"]
-    head    = "<u>I Have Searched Movie With Wrong Spelling But Take care next time 👇\n\nPromoted By </u> <b><I>@only_Botz</I></b>\n\n"
+    head    = "𝙄 𝙃𝙖𝙫𝙚 𝙎𝙚𝙖𝙧𝙘𝙝𝙚𝙙 𝙈𝙤𝙫𝙞𝙚 𝙒𝙞𝙩𝙝 𝙒𝙧𝙤𝙣𝙜 𝙎𝙥𝙚𝙡𝙡𝙞𝙣𝙜 𝘽𝙪𝙩 𝙏𝙖𝙠𝙚 𝙘𝙖𝙧𝙚 𝙣𝙚𝙭𝙩 𝙩𝙞𝙢𝙚 👇\n\n𝙋𝙧𝙤𝙢𝙤𝙩𝙚𝙙 𝘽𝙮 <a href='https://t.me/Crazybotz'>𝘾𝙧𝙖𝙯𝙮</a></b>\n\n"
     results = ""
     try:
        for channel in channels:
@@ -65,9 +65,9 @@ async def recheck(bot, update):
                name = (msg.text or msg.caption).split("\n")[0]
                if name in results:
                   continue 
-               results += f"<b>♻️🍿 {name}</I></b>\n\n🔗 href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙝𝙚𝙧𝙚</a></b>\n\n"
+               results += f"<b>♻️🍿 {name}</I></b>\n\n🔗 <a href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙝𝙚𝙧𝙚</a></b>\n\n"
        if bool(results)==False:          
-          return await update.message.edit("Still no results found! Please Request To Group Admin", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔺 ʀᴇQᴜᴇꜱᴛ ᴛᴏ ᴀᴅᴍɪɴ 🔺", callback_data=f"request_{id}")]]))
+          return await update.message.edit("𝙎𝙩𝙞𝙡𝙡 𝙣𝙤 𝙧𝙚𝙨𝙪𝙡𝙩𝙨 𝙛𝙤𝙪𝙣𝙙! 𝙋𝙡𝙚𝙖𝙨𝙚 𝙍𝙚𝙦𝙪𝙚𝙨𝙩 𝙏𝙤 𝙂𝙧𝙤𝙪𝙥 𝘼𝙙𝙢𝙞𝙣...", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔺 ʀᴇQᴜᴇꜱᴛ ᴛᴏ ᴀᴅᴍɪɴ 🔺", callback_data=f"request_{id}")]]))
        await update.message.edit(text=head+results, disable_web_page_preview=True)
     except Exception as e:
        await update.message.edit(f"❌ Error: `{e}`")
