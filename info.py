@@ -1,7 +1,7 @@
 API_ID       = 25069425
 API_HASH     = "41034e257e6449615faea5f18bbe1dd7"
 BOT_TOKEN    = "6159314541:AAFWdl3qSyNUjpwKPvpjG39PxXRpEOmL7t8"
-SESSION      = ""
+SESSION      = "BQGjmq4An8a-fGG6SkjbS0z_A1AG2HraKkjXMKIiCXsAA2oRBspC7o2hGZV4XAgC30kEBpbeaQJnhJZcxwSlJrGT06IDd_BkKEVHuC6cXcAqA0jCxGPnnf-jsZxVDaO_GighIfq84NHHJLWZ_xxVT9I0Sm7ZxbGFwxao_ZpG27OcR-7UIdan3efnnn2o2QLu4UVDr8DEOULjcQh8CI3dcBAUsxsMsskFIuKNDY3cgontGbF1lPdSCZlc2k0j3eCwHkN_oWDmLk5AGUd9LPzIuLnH9HeuFO4iwQ9JOh51Awo_vr7uJ0gXHtHoyKmBs9eR8kmsYqwCqfO4isBqqHgT_OdsUhTqrQAAAAFlbcqHAA"
 DATABASE_URI = "mongodb+srv://hegodal811:ehNXCGMvCqxKj1w3@cluster0.3xnorax.mongodb.net/?retryWrites=true&w=majority"
 LOG_CHANNEL  = -1001876507111
 ADMIN        = 6249148586
