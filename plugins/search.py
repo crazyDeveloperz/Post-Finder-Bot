@@ -36,14 +36,11 @@ async def search(bot, message):
                                           reply_markup=InlineKeyboardMarkup(buttons))
        else:
           msg = await message.reply_text(text=head+results, disable_web_page_preview=True)
-          task = asyncio.create_task(delete_message(msg))
+        _time = (int(time()) + (2*60))
+       await save_dlt_message(msg, _time)
+    except:
+       pass
        
-async def delete_message(message, wait_time=180):
-  await asyncio.sleep(wait_time)
-  await message.delete()
-
-await task
-
 @Client.on_callback_query(filters.regex(r"^recheck"))
 async def recheck(bot, update):
     clicked = update.from_user.id
