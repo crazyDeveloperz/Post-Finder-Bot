@@ -17,7 +17,7 @@ async def search(bot, message):
     if message.text.startswith("/"):
        return    
     query   = message.text 
-    head    = "<b>𝙃𝙚𝙧𝙚 𝙞𝙨 𝙩𝙝𝙚 𝙧𝙚𝙨𝙪𝙡𝙩𝙨 👇\n\n𝙋𝙧𝙤𝙢𝙤𝙩𝙚𝙙 𝘽𝙮 <a href='https://t.me/Crazybotz'>𝘾𝙧𝙖𝙯𝙮</a></b>\n\n"
+    head    = "<b>𝙃𝙚𝙧𝙚 𝙞𝙨 𝙩𝙝𝙚 𝙧𝙚𝙨𝙪𝙡𝙩𝙨  👇\n\n𝙋𝙧𝙤𝙢𝙤𝙩𝙚𝙙 𝘽𝙮 <a href='https://t.me/Crazybotz'>𝘾𝙧𝙖𝙯𝙮 𝘽𝙤𝙩𝙯</a></b>\n\n"
     results = ""
     try:
        for channel in channels:
@@ -25,23 +25,24 @@ async def search(bot, message):
                name = (msg.text or msg.caption).split("\n")[0]
                if name in results:
                   continue 
-               results += f"<b><I>♻️ {name}\n🔗<a href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙝𝙚𝙧𝙚</a></b>\n\n"                                                      
+               results += f"<b><I>♻️  {name}\n💠  <a href='{msg.link}'>𝘾𝙡𝙞𝙘𝙠 𝙃𝙚𝙧𝙚 𝙁𝙤𝙧 𝙍𝙚𝙖𝙪𝙡𝙩</a></b>\n\n"                                                      
        if bool(results)==False:
           movies = await search_imdb(query)
           buttons = []
           for movie in movies: 
               buttons.append([InlineKeyboardButton(movie['title'], callback_data=f"recheck_{movie['id']}")])
-          msg = await message.reply_photo(photo="https://telegra.ph/file/70317039d29a9107feac1.jpg",
+          msg = await message.reply_photo(photo="https://graph.org/file/93c07c73622371361a5b1.jpg",
                                           caption="<b><I>I Couldn't find anything related to Your Query😕.\nDid you mean any of these?</I></b>", 
                                           reply_markup=InlineKeyboardMarkup(buttons))
        else:
           msg = await message.reply_text(text=head+results, disable_web_page_preview=True)
-       _time = (int(time()) + (15*60))
-       await save_dlt_message(msg, _time)
-    except:
-       pass
+          task = asyncio.create_task(delete_message(msg))
        
+async def delete_message(message, wait_time=180):
+  await asyncio.sleep(wait_time)
+  await message.delete()
 
+await task
 
 @Client.on_callback_query(filters.regex(r"^recheck"))
 async def recheck(bot, update):
